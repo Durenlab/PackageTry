@@ -8,6 +8,10 @@ Description: clustering cell
 License: ?
 Depends:
   R (>= 4.0.0),
+  S4Vectors (>= 0.9.25),
+  IRanges (>= 1.99.18),
+  GenomicRanges (>= 1.17.20),
+  grid
 Imports: 
   BiocManager,
   Rcpp(>= 1.0.6),
