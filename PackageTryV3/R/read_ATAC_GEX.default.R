@@ -5,9 +5,9 @@ read_ATAC_GEX.default<-function(foldername){
 
   else{
 
-    filename=paste0(foldername,"/matrix.mtx")
+    filename=paste0(foldername,"matrix.mtx")
     a=read.table(filename,sep = "",header = T,comment.char = '%')
-    filename=paste0(foldername,"/features.tsv")
+    filename=paste0(foldername,"features.tsv")
     C=read.table(filename,sep='\t')
     chr=unique(C[,4])
     chr=chr[grep("^chr",chr)]
@@ -26,7 +26,7 @@ read_ATAC_GEX.default<-function(foldername){
     Symbol_location=cbind(Symbol_location,C[!isATAC,5])
     PeakName_location=matrix(chr_idx[isATAC],nrow = length(chr_idx[isATAC]))
     PeakName_location=cbind(PeakName_location,C[isATAC,5])
-    filename=paste0(foldername,"/barcodes.tsv")
+    filename=paste0(foldername,"barcodes.tsv")
     barcode=read.table(filename,sep="\t")
 
     ##rna
