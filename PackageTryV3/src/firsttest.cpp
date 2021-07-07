@@ -11,6 +11,7 @@ Rcpp::List CNmf(Eigen::Map<Eigen::MatrixXd> V, int K, int maxiter, Eigen::Map<Ei
 
 
   for(int iter=0;iter<maxiter;iter++){
+    Rcpp::checkUserInterrupt();
     Eigen::MatrixXd W0TV=W0.transpose()*V;
     Eigen::MatrixXd W0TW0H=W0.transpose()*W0*H0;
     H=ifzeroMCPP((H0.array()*(W0TV.array()/(W0TW0H+epsMCpp(W0TV)).array())).matrix());
@@ -65,6 +66,7 @@ Rcpp::List CPPNMF_cluster_joint_cross_domain_try(Eigen::Map<Eigen::MatrixXd> Pea
   //dnorm0=(PeakO-(W10*H0)).squaredNorm()+(lambda1*(X-(W20*H0)).squaredNorm())+(lambda2*(Reg-(W30*H0)).squaredNorm());
 
   for(int iter=0;iter<maxiter;iter++){
+    Rcpp::checkUserInterrupt();
     Eigen::MatrixXd W10T=W10.transpose();
     Eigen::MatrixXd W20T=W20.transpose();
     Eigen::MatrixXd W30T=W30.transpose();
