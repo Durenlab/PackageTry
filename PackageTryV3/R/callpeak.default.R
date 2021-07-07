@@ -1,6 +1,6 @@
 callpeak.default<-function(outfolder,fragment,barcord_cluster_whole,macs2path,bedtoolspath){
 
-outfolder="Rout/"
+#outfolder="Rout/"
 barcord_clusterF=paste0(outfolder,"barcord_cluster")
 cmd=paste0("mkdir -p ",barcord_clusterF,";rm -f ",barcord_clusterF,"/*")
 system(command=cmd)
